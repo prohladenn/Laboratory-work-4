@@ -23,16 +23,6 @@ namespace shapes {
          */
         static float getDistance(point a, point b);
 
-        /*
-         * Возвращает периметр фигуры.
-         */
-        float perimeter() const override;
-
-        /*
-         * Возвращает площадь фигуры.
-         */
-        float area() const override;
-
         int getX() const;
 
         int getY() const;
