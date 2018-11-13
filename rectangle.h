@@ -9,16 +9,21 @@ namespace shapes {
      */
     class rectangle : public shape {
         /*
-         *  Прямоугольник состояит из четырёх точек
+         *  Прямоугольник имеет ширину и высоту
          */
-        point a, b, c, d;
+        float width, height;
 
     public:
 
         /*
-         * Основной констуктор класса.
+         * Конструктор класса по ширине и высоте
          */
-        rectangle(const point &a, const point &b, const point &c, const point &d);
+        rectangle(float width, float height);
+
+        /*
+         * Констуктор класса по левой нижней и правой верхней точке
+         */
+        rectangle(const point &a, const point &b);
 
         /*
          * Возвращает периметр фигуры.
@@ -26,7 +31,7 @@ namespace shapes {
         float perimeter() const override;
 
         /*
-         * Возвращает прощад фигуры.
+         * Возвращает площадь фигуры.
          */
         float area() const override;
     };

@@ -1,5 +1,5 @@
 //
-// Created by HP-PC on 13.11.2018.
+// Created by Valery Kovshov on 13.11.2018.
 //
 
 #include "point.h"
@@ -7,10 +7,18 @@
 
 namespace shapes {
 
-    circle::circle(int r, const point &center) : shape("circle"), r(r), center(center) {
+    circle::circle(float r)
+            : shape("circle"), r(r) {
         this->setMyPerimeter(perimeter());
         this->setMyArea(area());
     }
+
+    circle::circle(const point &center, const point &pointOnCircle)
+            : shape("circle"), r(point::getDistance(center, pointOnCircle)) {
+        this->setMyPerimeter(perimeter());
+        this->setMyArea(area());
+    }
+
 
     float circle::perimeter() const {
         return (2 * pi * r);;
@@ -19,5 +27,4 @@ namespace shapes {
     float circle::area() const {
         return (r * r * pi);
     }
-
 }

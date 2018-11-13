@@ -1,5 +1,5 @@
 //
-// Created by HP-PC on 13.11.2018.
+// Created by Valery Kovshov on 13.11.2018.
 //
 
 #include "point.h"
@@ -9,18 +9,27 @@
 
 namespace shapes {
 
-    rectangle::rectangle(const point &a, const point &b, const point &c,
-                         const point &d) : shape("rectangle"), a(a), b(b), c(c), d(d) {
+    rectangle::rectangle(float width, float height)
+            : shape("rectangle"), width(width), height(height) {
+        this->setMyPerimeter(perimeter());
+        this->setMyArea(area());
+    }
+
+    rectangle::rectangle(const point &a, const point &b)
+            : shape("rectangle"),
+              width(abs(a.getX() - b.getX())),
+              height(abs(a.getY() - b.getY())) {
         this->setMyPerimeter(perimeter());
         this->setMyArea(area());
     }
 
     float rectangle::perimeter() const {
-        return (point::getDistance(a, b) + point::getDistance(b, c)) * 2;
+        return (width + height) * 2;
     }
 
     float rectangle::area() const {
-        return point::getDistance(a, b) * point::getDistance(b, c);
+        return width * height;
     }
+
 
 }

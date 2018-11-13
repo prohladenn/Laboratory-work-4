@@ -29,9 +29,13 @@ namespace shapes {
         float perimeter() const override;
 
         /*
-         * Возвращает прощад фигуры.
+         * Возвращает площадь фигуры.
          */
         float area() const override;
+
+        int getX() const;
+
+        int getY() const;
     };
 
 }

@@ -37,6 +37,7 @@ namespace shapes {
         */
         const std::string &getName() const { return name; }
 
+    protected:
         /*
         * Изменение значения периметра.
         */

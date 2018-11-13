@@ -1,5 +1,5 @@
 //
-// Created by HP-PC on 13.11.2018.
+// Created by Valery Kovshov on 13.11.2018.
 //
 
 #include "point.h"
@@ -9,22 +9,28 @@
 
 namespace shapes {
 
-    triangle::triangle(const point &a, const point &b,
-            const point &c) : shape("triangle"), a(a), b(b), c(c) {
+    triangle::triangle(const point &a, const point &b, const point &c)
+            : shape("triangle"),
+              a(point::getDistance(a, b)),
+              b(point::getDistance(b, c)),
+              c(point::getDistance(c, a)) {
+        this->setMyPerimeter(perimeter());
+        this->setMyArea(area());
+    }
+
+    triangle::triangle(float a, float b, float c)
+            : shape("triangle"), a(a), b(b), c(c) {
         this->setMyPerimeter(perimeter());
         this->setMyArea(area());
     }
 
     float triangle::perimeter() const {
-        return point::getDistance(a, b) + point::getDistance(a, c) + point::getDistance(b, c);
+        return a + b + c;
     }
 
     float triangle::area() const {
-        float ab = point::getDistance(a, b);
-        float ac = point::getDistance(a, c);
-        float bc = point::getDistance(b, c);
-        float pp = (ab + bc + ac) / 2;
-        return sqrtf(pp * (pp - ab) * (pp - bc) * (pp - ac));
+        float pp = (a + b + c) / 2;
+        return sqrtf(pp * (pp - a) * (pp - b) * (pp - a));
     }
 
 }

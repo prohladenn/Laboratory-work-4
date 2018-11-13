@@ -9,16 +9,20 @@ namespace shapes {
      */
     class circle : public shape {
 
-        int r; // радиус окужности
-        point center; // точка центра окружности
+        float r; // радиус окужности
         const float pi = 3.14159265f; // число Пи
 
     public:
 
         /*
-         * Основной констуктор класса.
+         * Конструктор класса по радиусу
          */
-        circle(int r, const point &center);
+        circle(float r);
+
+        /*
+         * Конструктор класса по центру и точке на окружности
+         */
+        circle(const point &center, const point &pointOnCircle);
 
         /*
          * Возвращает периметр фигуры.
@@ -26,7 +30,7 @@ namespace shapes {
         float perimeter() const override;
 
         /*
-         * Возвращает прощад фигуры.
+         * Возвращает площадь фигуры.
          */
         float area() const override;
     };

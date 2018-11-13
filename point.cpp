@@ -1,5 +1,5 @@
 //
-// Created by HP-PC on 13.11.2018.
+// Created by Valery Kovshov on 13.11.2018.
 //
 
 #include "point.h"
@@ -7,7 +7,8 @@
 
 namespace shapes {
 
-    point::point(int x, int y) : shape("point"), x(x), y(y) {
+    point::point(int x, int y)
+            : shape("point"), x(x), y(y) {
         this->setMyPerimeter(perimeter());
         this->setMyArea(area());
     }
@@ -22,6 +23,14 @@ namespace shapes {
 
     float point::area() const {
         return 0;
+    }
+
+    int point::getX() const {
+        return x;
+    }
+
+    int point::getY() const {
+        return y;
     }
 
 }

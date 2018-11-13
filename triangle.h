@@ -9,16 +9,21 @@ namespace shapes {
      */
     class triangle : public shape {
         /*
-         *  Треугольник состояит из трёх точек
+         *  Треугольник состояит из трёх сторон
          */
-        point a, b, c;
+        float a, b, c;
 
     public:
 
         /*
-         * Основной констуктор класса.
+         * Констуктор класса по трём точкам
          */
         triangle(const point &a, const point &b, const point &c);
+
+        /*
+         * Констуктор класса по трём сторонам
+         */
+        triangle(float a, float b, float c);
 
         /*
          * Возвращает периметр фигуры.
@@ -26,7 +31,7 @@ namespace shapes {
         float perimeter() const override;
 
         /*
-         * Возвращает прощад фигуры.
+         * Возвращает площадь фигуры.
          */
         float area() const override;
     };
