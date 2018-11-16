@@ -25,13 +25,14 @@ namespace shapes {
         circle(const point &center, const point &pointOnCircle);
 
         /*
-         * Возвращает периметр фигуры.
+         * Переопределение функции расчёта периметра
          */
         float perimeter() const override;
 
         /*
-         * Возвращает площадь фигуры.
+         * Переопределение функции расчёта площади
          */
         float area() const override;
+
     };
 }

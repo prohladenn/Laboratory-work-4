@@ -23,9 +23,25 @@ namespace shapes {
          */
         static float getDistance(point a, point b);
 
+        /*
+         * Получение переменной X
+         */
         int getX() const;
 
+        /*
+         * Получение переменной Y
+         */
         int getY() const;
+
+        /*
+         * Переопределение функции расчёта периметра
+         */
+        float perimeter() const override;
+
+        /*
+         * Переопределение функции расчёта площади
+         */
+        float area() const override;
     };
 
 }

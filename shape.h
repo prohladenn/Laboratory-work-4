@@ -12,8 +12,6 @@ namespace shapes {
          * Всякая фигура должна иметь название.
          */
         std::string name;
-        float myPerimeter = 0;
-        float myArea = 0;
 
     public:
 
@@ -25,32 +23,16 @@ namespace shapes {
         /*
          * Возвращает периметр фигуры.
          */
-        virtual float perimeter() const { return myPerimeter; }
+        virtual float perimeter() const = 0;
 
         /*
          * Возвращает прощад фигуры.
          */
-        virtual float area() const { return myArea; }
+        virtual float area() const = 0;
 
         /*
         * Возвращает имя фигуры.
         */
         const std::string &getName() const { return name; }
-
-    protected:
-        /*
-        * Изменение значения периметра.
-        */
-        void setMyPerimeter(float myPerimeter) {
-            shape::myPerimeter = myPerimeter;
-        }
-
-        /*
-        * Изменение значения площади.
-        */
-        void setMyArea(float myArea) {
-            shape::myArea = myArea;
-        }
-
     };
 }

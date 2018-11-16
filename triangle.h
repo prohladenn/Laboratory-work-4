@@ -26,12 +26,12 @@ namespace shapes {
         triangle(float a, float b, float c);
 
         /*
-         * Возвращает периметр фигуры.
+         * Переопределение функции расчёта периметра
          */
         float perimeter() const override;
 
         /*
-         * Возвращает площадь фигуры.
+         * Переопределение функции расчёта площади
          */
         float area() const override;
     };

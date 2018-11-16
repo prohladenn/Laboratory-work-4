@@ -10,18 +10,12 @@
 namespace shapes {
 
     rectangle::rectangle(float width, float height)
-            : shape("rectangle"), width(width), height(height) {
-        this->setMyPerimeter(perimeter());
-        this->setMyArea(area());
-    }
+            : shape("rectangle"), width(width), height(height) {}
 
     rectangle::rectangle(const point &a, const point &b)
             : shape("rectangle"),
               width(abs(a.getX() - b.getX())),
-              height(abs(a.getY() - b.getY())) {
-        this->setMyPerimeter(perimeter());
-        this->setMyArea(area());
-    }
+              height(abs(a.getY() - b.getY())) {}
 
     float rectangle::perimeter() const {
         return (width + height) * 2;
@@ -30,6 +24,5 @@ namespace shapes {
     float rectangle::area() const {
         return width * height;
     }
-
 
 }

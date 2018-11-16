@@ -13,16 +13,10 @@ namespace shapes {
             : shape("triangle"),
               a(point::getDistance(a, b)),
               b(point::getDistance(b, c)),
-              c(point::getDistance(c, a)) {
-        this->setMyPerimeter(perimeter());
-        this->setMyArea(area());
-    }
+              c(point::getDistance(c, a)) {}
 
     triangle::triangle(float a, float b, float c)
-            : shape("triangle"), a(a), b(b), c(c) {
-        this->setMyPerimeter(perimeter());
-        this->setMyArea(area());
-    }
+            : shape("triangle"), a(a), b(b), c(c) {}
 
     float triangle::perimeter() const {
         return a + b + c;
